@@ -1,14 +1,4 @@
 ﻿using System;
-
-// forums question
-// http://forums.xamarin.com/discussion/17278/custom-font-in-xamarin-forms-font-awesome#latest
-
-// custom fonts in iOS
-// http://blog.xamarin.com/custom-fonts-in-ios/
-
-// open-source font download
-// https://www.google.com/fonts
-
 using Xamarin.Forms;
 
 namespace tastxam
@@ -32,7 +22,7 @@ namespace tastxam
 
 			};
             
-            //label.FontFamily = "Planet N 2 cyr-lat";
+            
                 label.FontSize = Device.OnPlatform(
 				24,
 				Device.GetNamedSize(NamedSize.Medium, label),
@@ -43,13 +33,17 @@ namespace tastxam
 			var labelBold = new Label
 			{
 				Text = "Bold",
+				FontFamily = Device.OnPlatform(
+                    		"Lobster-Regular", // iOS
+                   		"Planet N 2 cyr-lat.ttf#Planet N 2 cyr-lat", // Android
+                    		@"\Assets\Fonts\Lobster-Regular.ttf#Lobster-Regular" // WinPhone
+                		),
 				FontSize = 14,
 				FontAttributes = FontAttributes.Bold,
 				VerticalOptions = LayoutOptions.CenterAndExpand,
 				HorizontalOptions = LayoutOptions.CenterAndExpand,
 			};
-            //labelBold.FontFamily = "Arial";
-
+            
             var labelItalic = new Label
 			{
 				Text = "Italic",
@@ -58,7 +52,7 @@ namespace tastxam
 				VerticalOptions = LayoutOptions.CenterAndExpand,
 				HorizontalOptions = LayoutOptions.CenterAndExpand,
 			};
-           // labelBold.FontFamily = "Arial";
+           
             var labelBoldItalic = new Label
 			{
 				Text = "BoldItalic",
